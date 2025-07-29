@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Tipo de Leucemia | QuizLab</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/admin-panel.css">
+</head>
+<body>
+
+  <header class="navbar-initial" id="navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="/" class="navbar-brand">QuizLab</a>
+      <div class="navbar-buttons">
+        <a href="/admin">Volver al panel</a>
+        <a href="/admin-login">Cerrar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 100px;">
+    <div class="container">
+      <h2>Agregar Tipo de Leucemia</h2>
+      <form action="/admin/tipo" method="POST">
+        <label for="nombre">Nombre del Tipo:</label>
+        <input type="text" name="nombre" id="nombre" required placeholder="Ej. Leucemia Linfoblástica Aguda" />
+        <button type="submit">Guardar Tipo</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>&copy; 2025 - Proyecto académico | Derechos reservados</small>
+    </div>
+  </footer>
+
+</body>
+</html>

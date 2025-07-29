@@ -1,0 +1,46 @@
+/* Loader contenedor */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b67f1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Ocultar con animación */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Spinner circular */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Texto opcional */
+.loader-text {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+}

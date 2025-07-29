@@ -1,0 +1,196 @@
+/* revisar-intento.css */
+
+/* --- Cabecera de revisión --- */
+.revision-intento-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.revision-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary, #0d6efd);
+}
+.revision-meta {
+  color: var(--text-muted, #6c757d);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.nota-final {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: var(--success, #198754);
+}
+
+/* --- Contenedor general --- */
+.revisar-wrapper {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* --- Cada pregunta --- */
+.pregunta-revision {
+  background: var(--panel-bg, #fff);
+  border-left: 6px solid var(--glass-border, #dee2e6);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin: 1.5rem auto;
+  max-width: 700px;
+  padding: 1rem 1.2rem;
+}
+.pregunta-revision.correcta   { border-color: var(--success, #198754); }
+.pregunta-revision.incorrecta { border-color: var(--danger,  #dc3545); }
+
+.pregunta-txt {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* --- Imagen --- */
+.pregunta-img-wrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.pregunta-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  object-fit: contain;
+}
+
+/* --- Opciones --- */
+.opciones-revision {
+  margin-bottom: 0.5rem;
+}
+.opciones-revision .opcion {
+  background: var(--input-bg, #f8f9fa);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  margin-bottom: 0.4em;
+  padding: 0.5em 0.8em;
+  font-size: 1rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+/* Contraste mejorado en Light Mode */
+.opcion.correcta {
+  background: #d4edda;      /* verde ligero con buen contraste */
+  border-color: #155724;     /* verde oscuro */
+  color: #155724;
+}
+.opcion.seleccionada.correcta {
+  background: #c3e6cb;      /* variante un poco más oscura */
+  border-color: #155724;
+  color: #155724;
+}
+
+/* estados originales */
+.opcion.incorrecta {
+  background: #f8d7da;
+  border-color: #dc3545;
+}
+.opcion.seleccionada {
+  background: #e7bf0b8f;
+  border-color: #ffc107c9;
+}
+
+/* estados combinados restantes */
+.opcion.seleccionada.incorrecta {
+  background: #f5c6cb;
+  border-color: #dc3545;
+}
+
+/* indicadores */
+.respuesta-indicador {
+  font-size: 0.9em;
+  margin-left: 0.5em;
+  vertical-align: middle;
+}
+.respuesta-indicador.correcta   { color: var(--success, #198754); font-weight: bold; }
+.respuesta-indicador.incorrecta { color: var(--danger,  #dc3545);  font-weight: bold; }
+
+/* preguntas abiertas */
+.opcion.abierta {
+  background: var(--input-bg, #f8f9fa);
+}
+.opcion.abierta-correcta {
+  background: var(--success-light, #d1e7dd);
+  border-color: var(--success, #198754);
+}
+
+/* --- Dark Mode Overrides --- */
+html.dark, body.dark {
+  --panel-bg:      #212529;
+  --panel-text:    #f8f9fa;
+  --input-bg:      #343a40;
+  --glass-border:  #495057;
+  --success-light: #1e4620;
+  --danger-light:  #601214;
+}
+
+html.dark body {
+  background-color: var(--panel-bg) !important;
+  color:            var(--panel-text) !important;
+}
+html.dark main {
+  background: transparent !important;
+}
+html.dark footer {
+  background-color: var(--panel-bg) !important;
+  border-top: 1px solid var(--glass-border) !important;
+  color:      var(--panel-text) !important;
+}
+
+html.dark .pregunta-revision {
+  background: var(--panel-bg) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.7) !important;
+  border-color: var(--glass-border) !important;
+}
+
+html.dark .revision-titulo,
+html.dark .revision-meta,
+html.dark .pregunta-txt,
+html.dark .respuesta-indicador {
+  color: var(--panel-text) !important;
+}
+
+html.dark .opciones-revision .opcion {
+  background: var(--input-bg) !important;
+  color:      var(--panel-text) !important;
+  border-color: transparent !important;
+}
+
+html.dark .opcion.correcta {
+  background:   var(--success-light) !important;
+  border-color: var(--success) !important;
+  color:        #e9f7ef !important;
+}
+html.dark .opcion.incorrecta {
+  background:   var(--danger-light) !important;
+  border-color: var(--danger) !important;
+  color:        #ffe4e6 !important;
+}
+html.dark .opcion.seleccionada {
+  background:   #7a5700 !important;
+  border-color: #ffc107 !important;
+  color:        #fff3cd !important;
+}
+html.dark .opcion.seleccionada.correcta {
+  background:   #0f5132 !important;
+  border-color: #198754 !important;
+  color:        #d1e7dd !important;
+}
+html.dark .opcion.seleccionada.incorrecta {
+  background:   #4d1a1d !important;
+  border-color: #dc3545 !important;
+  color:        #f8d7da !important;
+}
+
+/* botones flotantes */
+html.dark .btn-volver-flotante,
+html.dark .btn-ir-arriba {
+  background: #343a40 !important;
+  color:      #f8f9fa !important;
+}

@@ -1,0 +1,372 @@
+:root {
+  --color-bg: #f4f6f8;
+  --color-panel: #fff;
+  --color-primary: #1559c6;
+  --color-secondary: #ffd600;
+  --color-secondary-hover: #e0a800;
+  --color-success: #28a745;
+  --color-success-hover: #218838;
+  --color-text: #212529;
+  --color-text-light: #6c757d;
+  --color-border: #dee2e6;
+  --color-border-strong: #bbc5d4;
+  --color-error: #dc3545;
+  --shadow-panel: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* === MODO OSCURO === */
+html.dark {
+  --color-bg: #191a1e;
+  --color-panel: #22242a;
+  --color-primary: #7db5f8;
+  --color-secondary: #ffe49a;
+  --color-secondary-hover: #ffd44a;
+  --color-success: #24b47e;
+  --color-success-hover: #178357;
+  --color-text: #e3e8ee;
+  --color-text-light: #b6bdd7;
+  --color-border: #23242a;
+  --color-border-strong: #303345;
+  --color-error: #ff6f6f;
+  --shadow-panel: 0 8px 32px rgba(0,0,0,0.27);
+}
+
+/* === Fondo general === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Para modo oscuro cuando Bootstrap añade bg-light al body */
+html.dark body.bg-light {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+main {
+  flex: 1;
+  padding: 4rem 1rem 2rem 1rem;
+}
+
+/* === Panel del formulario === */
+.panel-glass {
+  max-width: 900px;
+  margin: auto;
+  background-color: var(--color-panel);
+  padding: 2rem 2.2rem 2.2rem 2.2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-panel);
+  border: 1.5px solid var(--color-border-strong);
+  transition: background 0.22s, box-shadow 0.2s, border 0.2s;
+}
+
+.panel-glass h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: .5px;
+}
+
+/* === Formulario === */
+.form-label {
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: .25rem;
+}
+
+.form-control,
+.form-select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-strong);
+  background-color: #fff;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  box-shadow: none;
+  font-size: 1rem;
+  transition: background 0.19s, color 0.18s, border 0.18s;
+}
+
+/* === Inputs y selects en dark === */
+html.dark .form-control,
+html.dark .form-select,
+html.dark input[type="file"] {
+  background-color: #22242a !important;
+  color: #e3e8ee !important;
+  border: 1.2px solid #303345 !important;
+}
+
+html.dark .form-control:focus,
+html.dark .form-select:focus {
+  border-color: #7db5f8 !important;
+  outline: none;
+  box-shadow: 0 0 0 2px #7db5f83a !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px #1559c62a;
+}
+
+.btn {
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 18px;
+  transition: all 0.22s;
+}
+
+/* === Botones === */
+.btn-warning {
+  background-color: var(--color-secondary);
+  color: #222;
+  border: none;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+}
+.btn-warning:hover {
+  background-color: var(--color-secondary-hover);
+  color: #000;
+}
+.btn-success {
+  background-color: var(--color-success);
+  border: none;
+  color: #fff;
+}
+.btn-success:hover {
+  background-color: var(--color-success-hover);
+}
+html.dark .btn-warning {
+  background-color: #ffe49a !important;
+  color: #222 !important;
+}
+html.dark .btn-warning:hover {
+  background-color: #ffd44a !important;
+  color: #000 !important;
+}
+html.dark .btn-success {
+  background-color: #24b47e !important;
+  color: #fff !important;
+}
+html.dark .btn-success:hover {
+  background-color: #178357 !important;
+  color: #fff !important;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.88rem;
+  border-radius: 6px;
+}
+
+/* Botón de volver flotante mejorado */
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-weight: 600;
+  color: #333;
+  background-color: #f0f0f0;
+  border: 1.2px solid #bbc5d4;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.18s;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(20,40,80,0.05);
+}
+.btn-volver:hover {
+  background-color: #e2e2e2;
+  border-color: #8fa6c0;
+  color: #0a2540;
+}
+html.dark .btn-volver,
+html.dark .btn-ir-arriba {
+  background: #22242a !important;
+  color: #e3e8ee !important;
+  border: 1.2px solid #303345 !important;
+}
+html.dark .btn-volver:hover {
+  background-color: #303345 !important;
+  color: #fff !important;
+}
+
+/* === Pregunta visual === */
+.pregunta {
+  background-color: #fdfdfd;
+  border: 1.2px solid var(--color-border-strong);
+  border-radius: 12px;
+  padding: 1.4rem 1.2rem 1.1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  position: relative;
+  transition: box-shadow 0.19s, border-color 0.13s, background 0.16s;
+}
+html.dark .pregunta {
+  background-color: #23242a !important;
+  border: 1.2px solid #313345 !important;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.17) !important;
+}
+.pregunta:hover {
+  box-shadow: 0 8px 26px rgba(110,120,170,0.11);
+  border-color: var(--color-primary);
+  z-index: 1;
+}
+html.dark .pregunta:hover {
+  border-color: #7db5f8 !important;
+}
+
+.pregunta .numero-pregunta {
+  font-weight: 700;
+  font-size: 1.13rem;
+  color: var(--color-primary);
+}
+html.dark .pregunta .numero-pregunta {
+  color: #7db5f8 !important;
+}
+.pregunta .btn-danger {
+  font-weight: 500;
+}
+
+/* Opciones y literales */
+.literales-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.literales-container input {
+  margin-left: 1rem;
+}
+
+/* Para opciones (opciones-container y lista-opciones) */
+.opciones-container {
+  margin-top: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Sombra a inputs file para diferenciar */
+input[type="file"] {
+  padding: 8px;
+  font-size: 0.98rem;
+  background: #f6f8ff;
+  border: 1.1px solid #e6eaf2;
+  border-radius: 8px;
+}
+html.dark input[type="file"] {
+  background: #23242a !important;
+  color: #e3e8ee !important;
+  border: 1.1px solid #303345 !important;
+}
+
+/* Feedback */
+.invalid-feedback {
+  color: var(--color-error);
+  font-size: 0.98em;
+}
+html.dark .invalid-feedback {
+  color: #ff6f6f !important;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  background: inherit;
+  color: inherit;
+  border-radius: 8px;
+}
+
+/* Mensaje de error global */
+#form-error {
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 0.3em;
+  color: var(--color-error);
+}
+html.dark #form-error {
+  color: #ff6f6f !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .panel-glass {
+    padding: 1.1rem;
+  }
+  .pregunta {
+    padding: 0.75rem;
+  }
+  .panel-glass h2 {
+    font-size: 1.28rem;
+  }
+}
+
+/* =========================
+   HEADER & NAVBAR EN MODO OSCURO
+   ========================= */
+html.dark .navbar,
+html.dark header,
+html.dark .navbar.navbar-light,
+html.dark .navbar.bg-light {
+  background-color: #191a1e !important;
+  color: #f3f6fa !important;
+  border-bottom: 1px solid #22242a !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+html.dark .navbar * {
+  color: #687d98 !important;
+}
+html.dark .navbar .navbar-brand,
+html.dark .navbar .nav-link,
+html.dark .navbar .dropdown-menu,
+html.dark .navbar .dropdown-item {
+  color: #f3f6fa !important;
+  background: transparent !important;
+}
+html.dark .navbar .dropdown-menu {
+  background: #23242a !important;
+  border-color: #23242a !important;
+}
+html.dark .navbar .dropdown-item:hover,
+html.dark .navbar .dropdown-item:focus {
+  background: #191a1e !important;
+  color: #7db5f8 !important;
+}
+
+/* =========================
+   FOOTER EN MODO OSCURO
+   ========================= */
+footer.bg-light, 
+html.dark footer.bg-light {
+  background: #191a1e !important;
+  color: #aaa !important;
+  border-top: 1px solid #23242a !important;
+}
+
+/* Mejorar contraste en el texto del footer */
+html.dark footer.bg-light small,
+html.dark footer.bg-light .text-muted {
+  color: #aaa !important;
+}
+
+/* =========================
+   BOTONES FLOTANTES EN DARK
+   ========================= */
+html.dark .btn-volver-flotante,
+html.dark .btn-ir-arriba {
+  background: #22242a !important;
+  color: #e3e8ee !important;
+  border: 1.2px solid #303345 !important;
+}
+html.dark .btn-volver-flotante:hover {
+  background: #303345 !important;
+  color: #fff !important;
+}

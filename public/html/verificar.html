@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verifica tu correo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/root.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/loader.css" />
+  <link rel="stylesheet" href="../css/verificar.css" />
+</head>
+<body>
+  <main class="auth-wrapper">
+    <div class="auth-panel">
+      <h1 class="auth-title">Verifica tu correo</h1>
+      <p>Te enviamos un código a <strong id="verificationEmail"></strong>.</p>
+
+      <div class="auth-form-group">
+        <input type="text" id="verificationCodeInput" placeholder="Código de verificación" class="auth-input" />
+      </div>
+      <button id="verifyButton" class="auth-button auth-button--primary">Verificar</button>
+      <button id="resendButton" class="auth-button auth-button--secondary">Reenviar código</button>
+
+      <p id="verifyError" style="color: var(--color-error); margin-top: 1rem;"></p>
+      <div class="auth-footer-links">
+        ¿Ya tienes cuenta? <a href="/iniciar-sesion">Iniciar sesión</a>
+      </div>
+    </div>
+  </main>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/verificar.js"></script>
+</body>
+</html>

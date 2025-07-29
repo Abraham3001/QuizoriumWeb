@@ -1,0 +1,169 @@
+/* Wrapper general */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* Ajusta según la altura del header */
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Panel contenedor */
+.auth-panel {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.auth-panel:hover {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+/* Título */
+.auth-title {
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Grupos de campos */
+.auth-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Campos de entrada */
+.auth-input {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0,61,165,0.2);
+  outline: none;
+}
+
+/* Botones generales */
+.auth-button {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Botón principal (ej: Registrar, Ingresar) */
+.auth-button--primary {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+}
+
+.auth-button--primary:hover,
+.auth-button--primary:focus {
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  transform: translateY(-1px);
+}
+
+/* Botón secundario (ej: amarillo) */
+.auth-button--secondary {
+  background-color: var(--color-secondary);
+  color: #212529;
+}
+
+.auth-button--secondary:hover,
+.auth-button--secondary:focus {
+  background-color: var(--color-secondary-dark);
+}
+
+/* Botón Google */
+.auth-button--google {
+  background-color: #db4437;
+  color: #fff;
+}
+
+.auth-button--google:hover,
+.auth-button--google:focus {
+  background-color: #c1351d;
+}
+
+/* Separador */
+.auth-separator {
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* Términos */
+.auth-terms {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.auth-terms a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.auth-terms a:hover,
+.auth-terms a:focus {
+  text-decoration: underline;
+}
+
+/* Footer links */
+.auth-footer-links {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+}
+
+.auth-footer-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.auth-footer-links a:hover,
+.auth-footer-links a:focus {
+  text-decoration: underline;
+}
+
+/* Animación opcional al cargar */
+.auth-panel {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

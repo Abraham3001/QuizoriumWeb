@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prueba Dropdown</title>
+  <link rel="stylesheet" href="../css/profile-dropdown.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-dropdown show" id="profileDropdown">
+    <button class="profile-button" id="profileButton">
+      <img src="https://www.gravatar.com/avatar/?d=mp" alt="Avatar" />
+      <span>Abraham</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Panel</a></li>
+      <li><a href="#">Cuestionarios</a></li>
+      <li><a href="#">Retroalimentación</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a href="#">Cerrar sesión</a></li>
+    </ul>
+  </div>
+
+  <script>
+    const profileButton = document.getElementById("profileButton");
+    const profileDropdown = document.getElementById("profileDropdown");
+
+    profileButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      profileDropdown.classList.toggle("show");
+      console.log("🔹 Toggle SHOW:", profileDropdown.classList.contains("show"));
+    });
+
+    window.addEventListener("click", (e) => {
+      if (!profileButton.contains(e.target)) {
+        profileDropdown.classList.remove("show");
+        console.log("🔸 Cerrado.");
+      }
+    });
+  </script>
+</body>
+</html>

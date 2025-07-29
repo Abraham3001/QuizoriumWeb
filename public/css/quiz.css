@@ -1,0 +1,385 @@
+/* public/css/quiz.css */
+body, html {
+  background: #fff !important;
+}
+/* Container general */
+#quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Título y descripción */
+#quiz-container h2 {
+  text-align: center;
+  color: #0d6efd;
+  margin-bottom: 1.5rem;
+}
+#quiz-container p {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+/* Cada pregunta como tarjeta */
+.question-card {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.question-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+.question-card .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;  /* espacio entre opciones */
+}
+
+.question-card .form-check-input {
+  flex-shrink: 0;          /* que el input no se comprima */
+  margin: 0 0.75rem 0 0;   /* separación a la derecha */
+}
+
+.question-card .form-check-label {
+  margin: 0;               /* quita márgenes heredados */
+}
+
+/* Opcional: si quieres que el contenedor de opciones no se superponga con la imagen */
+.question-card > div:last-child {
+  clear: both;
+}
+
+/* Opciones */
+.form-check {
+  margin-bottom: 0.75rem;
+}
+.form-check-input {
+  margin-top: 0.3rem;
+}
+.form-control {
+  border-radius: 0.375rem;
+}
+
+/* Imágenes de pregunta */
+.question-card img {
+  max-width: 100%;    /* Que nunca exceda el ancho de su contenedor */
+  width: 600px;       /* Ancho fijo más generoso */
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem; /* Centrada y con espacio abajo */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Botón de enviar */
+#quiz-form button[type="submit"] {
+  display: block;
+  margin: 32px auto 0 auto;
+  width: auto;
+  min-width: 180px;
+  max-width: 340px;
+  padding: 0.65rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, #198754, #157347);
+  border: none;
+  color: white;
+  transition: background 0.3s;
+}
+#quiz-form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #157347, #146c43);
+}
+
+/* Botón volver */
+.btn-volver-flotante {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  background: #0d6efd;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-volver-flotante:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}   
+
+.quiz-img-zoomable {
+  cursor: zoom-in;
+  transition: box-shadow 0.2s, filter 0.2s;
+  border: 2px solid #e3e3e3;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  max-width: 350px;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.quiz-img-zoomable:hover {
+  filter: brightness(0.98) contrast(1.08);
+  box-shadow: 0 4px 24px rgba(33,105,243,0.14);
+  border-color: #1976d2;
+}
+
+#zoom-modal-quiz {
+  position: fixed;
+  display: none;
+  z-index: 3500;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  justify-content: center; align-items: center;
+  cursor: zoom-out;
+}
+#zoom-modal-quiz.active { display: flex; }
+#zoom-modal-quiz img {
+  max-width: 96vw; max-height: 85vh;
+  border-radius: 14px;
+  border: 4px solid #fff;
+  background: #fff;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+}
+#zoom-modal-quiz .zoom-close {
+  position: absolute; top: 32px; right: 40px;
+  font-size: 2.4rem; color: #fff; cursor: pointer;
+  font-weight: bold; z-index: 3600;
+  transition: color 0.18s;
+}
+#zoom-modal-quiz .zoom-close:hover { color: #ffd600; }
+
+.quiz-img-lupa {
+  position: absolute; top: 8px; right: 18px;
+  background: rgba(255,255,255,0.94);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 8px rgba(33,105,243,0.10);
+  font-size: 1.22rem; color: #1976d2;
+  pointer-events: none; /* solo visual */
+}
+.quiz-img-zoomable:hover + .quiz-img-lupa { color: #ffd600; }
+
+.quiz-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto 1.5rem auto;
+  max-width: 370px; /* igual o mayor a max-width de la imagen */
+  min-height: 170px;
+}
+
+.quiz-img-zoomable {
+  display: block;
+  margin: 0 auto;
+  max-width: 350px;
+  max-height: 220px;
+  border: 2px solid #e3e3e3;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.quiz-img-lupa {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(255,255,255,0.94);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 8px rgba(33,105,243,0.10);
+  font-size: 1.22rem;
+  color: #1976d2;
+  pointer-events: none;
+}
+
+.question-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-head {
+  max-width: 750px;
+  margin: 0 auto 2.2rem auto;
+  text-align: center;
+}
+.quiz-title {
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #0d6efd;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+.quiz-desc {
+  color: #495057;
+  font-size: 1.14rem;
+  margin-bottom: 0;
+}
+
+html.dark,
+html.dark body {
+  background: #181a20 !important;
+  color: #e4eaf1 !important;
+}
+
+/* Contenedor */
+html.dark #quiz-main,
+html.dark #quiz-container {
+  background: transparent !important;
+  color: #e4eaf1 !important;
+}
+
+/* Tarjetas de pregunta */
+html.dark .question-card {
+  background: #21232a !important;
+  color: #e4eaf1 !important;
+  border-color: #2b2e3b !important;
+  box-shadow: 0 2px 14px rgba(12,24,39,0.18) !important;
+}
+
+html.dark .question-card p,
+html.dark .question-card label,
+html.dark .quiz-title,
+html.dark .quiz-desc {
+  color: #e4eaf1 !important;
+}
+
+html.dark .form-check-input {
+  accent-color: #ffd600;
+  background-color: #23242a !important;
+  border-color: #3a415b !important;
+}
+html.dark .form-check-input:checked {
+  background-color: #ffd600 !important;
+  border-color: #ffd600 !important;
+}
+
+html.dark .form-control {
+  background: #22242a !important;
+  color: #e3e8ee !important;
+  border: 1.2px solid #313345 !important;
+}
+html.dark .form-control:focus {
+  border-color: #ffd600 !important;
+  box-shadow: 0 0 0 2px #ffd60030 !important;
+}
+
+/* Botón enviar */
+html.dark #quiz-form button[type="submit"] {
+  background: linear-gradient(90deg, #24b47e, #17936b) !important;
+  color: #fff !important;
+}
+html.dark #quiz-form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #17936b, #24b47e) !important;
+}
+
+/* Imágenes */
+html.dark .question-card img,
+html.dark .quiz-img-zoomable {
+  background: #23242a !important;
+  border: 2px solid #23242a !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.23) !important;
+}
+html.dark .quiz-img-zoomable:hover {
+  border-color: #ffd600 !important;
+}
+
+/* Lupa SVG */
+html.dark .quiz-img-lupa {
+  background: #181a20 !important;
+  color: #ffd600 !important;
+}
+
+/* Modal de imagen */
+html.dark #zoom-modal-quiz {
+  background: rgba(12,14,22,0.88) !important;
+}
+html.dark #zoom-modal-quiz img {
+  background: #23242a !important;
+  border-color: #ffd600 !important;
+}
+
+/* Overlay de envío */
+html.dark #submit-overlay {
+  background: rgba(12,14,22,0.84) !important;
+}
+html.dark #submit-overlay .spinner-border {
+  color: #ffd600 !important;
+}
+html.dark #submit-overlay p {
+  color: #ffd600 !important;
+}
+
+/* Mensajes de error */
+html.dark #form-error {
+  color: #ff6f6f !important;
+}
+
+/* Botón volver flotante */
+html.dark .btn-volver-flotante {
+  background: #21232a !important;
+  color: #ffd600 !important;
+  border: 1.2px solid #2b2e3b !important;
+}
+html.dark .btn-volver-flotante:hover {
+  background: #2b2e3b !important;
+  color: #fff !important;
+}
+
+/* Footer */
+html.dark footer.bg-light {
+  background: #21232a !important;
+  color: #b0b5c0 !important;
+  border-top: 1.5px solid #313345 !important;
+}
+
+/* =========================
+   HEADER & NAVBAR EN MODO OSCURO
+   ========================= */
+html.dark .navbar,
+html.dark header,
+html.dark .navbar.navbar-light,
+html.dark .navbar.bg-light {
+  background-color: #191a1e !important;
+  color: #f3f6fa !important;
+  border-bottom: 1px solid #22242a !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+html.dark .navbar * {
+  color: #687d98 !important;
+}
+html.dark .navbar .navbar-brand,
+html.dark .navbar .nav-link,
+html.dark .navbar .dropdown-menu,
+html.dark .navbar .dropdown-item {
+  color: #f3f6fa !important;
+  background: transparent !important;
+}
+html.dark .navbar .dropdown-menu {
+  background: #23242a !important;
+  border-color: #23242a !important;
+}
+html.dark .navbar .dropdown-item:hover,
+html.dark .navbar .dropdown-item:focus {
+  background: #191a1e !important;
+  color: #7db5f8 !important;
+}

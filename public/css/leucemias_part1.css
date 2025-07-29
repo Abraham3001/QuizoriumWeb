@@ -1,0 +1,32 @@
+.tarjeta-info {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.contenido-flex {
+  display: flex;
+  gap: 16px; /* Espacio entre imagen y texto */
+  align-items: flex-start;
+}
+
+.imagen-leucemia {
+  width: 230px;
+  height: auto;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.texto-info h5 {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  color: #2c3e50;
+}
+
+.texto-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+}

@@ -1,0 +1,197 @@
+/* Wrapper general que centra el contenido */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Panel común */
+.auth-panel {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.auth-panel:hover {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+}
+
+/* Título */
+.auth-title {
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Grupos de campos */
+.auth-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.auth-input {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0,61,165,0.2);
+  outline: none;
+}
+
+/* Botones */
+.auth-button {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.auth-button--primary {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+}
+
+.auth-button--primary:hover,
+.auth-button--primary:focus {
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary));
+  transform: translateY(-1px);
+}
+
+/* Términos */
+.auth-terms {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.auth-terms a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+.auth-terms a:hover,
+.auth-terms a:focus {
+  text-decoration: underline;
+}
+
+/* Footer links */
+.auth-footer-links {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+}
+
+.auth-footer-links a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.auth-footer-links a:hover,
+.auth-footer-links a:focus {
+  text-decoration: underline;
+}
+    .barra {
+      height: 5px;
+      background: #ccc;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .fuerza-1 { background: red; width: 25%; }
+    .fuerza-2 { background: orange; width: 50%; }
+    .fuerza-3 { background: yellowgreen; width: 75%; }
+    .fuerza-4 { background: limegreen; width: 100%; }
+    .password-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .position-relative {
+      position: relative;
+    }
+    .password-match {
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+    .invalid-feedback {
+      color: #d00;
+      font-size: 0.9rem;
+      display: block;
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+    }
+    .is-invalid {
+      border-color: #d00 !important;
+    }
+    
+/* Animación */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Barra de fuerza de contraseña */
+.barra {
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background-color: #eee;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Diferentes niveles de fuerza */
+.fuerza-0 {
+  background-color: #ddd;
+}
+.fuerza-1 {
+  background-color: #ff4d4f;
+}
+.fuerza-2 {
+  background-color: #ff7a45;
+}
+.fuerza-3 {
+  background-color: #faad14;
+}
+.fuerza-4 {
+  background-color: #52c41a;
+}

@@ -1,0 +1,246 @@
+/* ================== FONDO GLOBAL ================== */
+html, body {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+body.bg-light {
+  background: #f8f9fa !important;
+}
+html.dark,
+html.dark body,
+html.dark body.bg-light {
+  background: #18191c !important;
+  color: #e3e8ee !important;
+}
+
+/* === NAVBAR/Header en modo oscuro === */
+html.dark .navbar,
+html.dark header,
+html.dark .navbar.navbar-light,
+html.dark .navbar.bg-light {
+  background-color: #191a1e !important;
+  color: #f3f6fa !important;
+  border-bottom: 1px solid #22242a !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+/* Todos los elementos de la navbar: textos, iconos, enlaces, toggler */
+html.dark .navbar *,
+html.dark .navbar .navbar-brand,
+html.dark .navbar .nav-link,
+html.dark .navbar .navbar-toggler,
+html.dark .navbar .navbar-toggler-icon,
+html.dark .navbar .dropdown-menu,
+html.dark .navbar .dropdown-item {
+  color: #f3f6fa !important;
+  background: transparent !important;
+  border-color: #23242a !important;
+}
+
+/* Dropdown en modo oscuro */
+html.dark .navbar .dropdown-menu {
+  background: #23242a !important;
+  border-color: #23242a !important;
+}
+html.dark .navbar .dropdown-item:hover,
+html.dark .navbar .dropdown-item:focus {
+  background: #191a1e !important;
+  color: #7db5f8 !important;
+}
+
+/* Si usas icons de Bootstrap o lucide-react */
+html.dark .navbar .bi,
+html.dark .navbar .icon,
+html.dark .navbar svg {
+  color: #f3f6fa !important;
+  fill: #f3f6fa !important;
+}
+
+
+/* ================== CONTENEDOR PRINCIPAL ================== */
+main.container {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(20, 60, 90, 0.07);
+  padding: 40px 28px;
+  margin-top: 35px;
+  max-width: 820px;
+}
+html.dark main.container {
+  background: #23242a !important;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22) !important;
+}
+
+/* ================== TÍTULO Y SUBTÍTULO ================== */
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1559c6;
+  margin-bottom: 2.2rem;
+  letter-spacing: 0.01em;
+}
+#quiz-title {
+  color: #198754;
+  font-weight: 700;
+}
+html.dark h2 {
+  color: #7db5f8 !important;
+}
+html.dark #quiz-title {
+  color: #67dca4 !important;
+}
+
+/* ================== TABLA ================== */
+.table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0;
+  box-shadow: 0 2px 10px rgba(120, 130, 170, 0.08);
+}
+.table thead th {
+  background: #eaf2fb;
+  color: #1a355b;
+  font-size: 1.08rem;
+  border-bottom: 2.5px solid #b7d1ec;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background: #f6fafd;
+}
+.table tbody tr:hover {
+  background: #d6eafd;
+  transition: background 0.19s;
+}
+.table td, .table th {
+  padding: 1rem 1.1rem;
+  vertical-align: middle;
+  color: #222;
+}
+.table td small,
+.table .text-muted {
+  color: #9ea5ba !important;
+  opacity: 1 !important;
+}
+
+/* ==== DARK MODE: TABLA ==== */
+html.dark .table {
+  background: #23242a !important;
+  color: #e3e8ee !important;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.28) !important;
+}
+html.dark .table thead th {
+  background: #2d2f38 !important;
+  color: #d3d8e4 !important;
+  border-bottom: 2.5px solid #313345 !important;
+}
+html.dark .table-striped > tbody > tr,
+html.dark .table > tbody > tr {
+  background-color: #23242a !important;
+}
+html.dark .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #25262b !important;
+}
+html.dark .table th,
+html.dark .table td {
+  color: #e3e8ee !important;
+  background: transparent !important;
+}
+html.dark .table td small,
+html.dark .table .text-muted {
+  color: #b6bdd7 !important;
+}
+html.dark .table tbody tr:hover {
+  background: #2c2d32 !important;
+  color: #fff !important;
+}
+
+/* ================== BADGE SCORE ================== */
+.badge.bg-success {
+  background: #30b57b;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.65em 1.2em;
+  border-radius: 1em;
+}
+html.dark .badge.bg-success {
+  background: #24b47e !important;
+  color: #fff !important;
+}
+
+/* ================== BOTÓN ACCIÓN ================== */
+.btn-outline-primary {
+  color: #1465b3;
+  border-color: #1769c2;
+  font-weight: 700;
+  background: transparent;
+  transition: background 0.13s, color 0.13s, border 0.13s;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background: #1769c2;
+  color: #fff;
+  border-color: #1769c2;
+}
+html.dark .btn-outline-primary {
+  color: #9ac7ff !important;
+  border-color: #406fad !important;
+  background: transparent !important;
+}
+html.dark .btn-outline-primary:hover,
+html.dark .btn-outline-primary:focus {
+  background: #345488 !important;
+  color: #fff !important;
+  border-color: #406fad !important;
+  box-shadow: 0 2px 10px rgba(80,133,217,0.18) !important;
+}
+
+/* ================== BOTONES FLOTANTES ================== */
+.btn-volver-flotante, .btn-ir-arriba {
+  background: #212529;
+  color: #fff;
+  border-radius: 2em;
+  font-weight: 600;
+}
+html.dark .btn-volver-flotante, html.dark .btn-ir-arriba {
+  background: #191a1e !important;
+  color: #e3e8ee !important;
+}
+
+/* ================== FOOTER ================== */
+footer.bg-light {
+  background: #fff !important;
+  color: #666 !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+html.dark footer.bg-light {
+  background: #191a1e !important;
+  color: #aaa !important;
+  border-top: 1px solid #23242a !important;
+}
+
+/* ================== MENSAJE DE ERROR/VACÍO ================== */
+.text-danger, tr > td[colspan] {
+  text-align: center !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #b81d23 !important;
+}
+html.dark .text-danger, html.dark tr > td[colspan] {
+  color: #ff6f6f !important;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 900px) {
+  main.container {
+    padding: 20px 3px;
+    margin-top: 16px;
+    max-width: 99vw;
+  }
+  .table td, .table th {
+    padding: 0.72rem 0.5rem;
+    font-size: 0.99rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+}

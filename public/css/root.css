@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #003DA5;
+  --color-primary-dark: #002F7E;
+  --color-secondary: #f6ca48;
+  --color-secondary-dark: #E0A800;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F2F6FA;
+  --color-text: #212529;
+  --color-text-light: #6C757D;
+  --color-bg-navbar: #F2F2F2;
+  --color-navbar-text: #0033A1;
+  --color-bg-dark: #121212;       
+  --color-text-dark: #F1F1F1;
+  --color-error: #D32F2F;
+  --color-sombra: rgba(0,0,0,0.15);
+  --color-border: #E0E0E0;
+}
+
+body.dark {
+  --color-bg: #121212;
+  --color-bg-alt: #1E1E1E;
+  --color-text: #F1F1F1;
+  --color-text-light: #6C757D;      
+  --color-bg-navbar: #1E1E1E;
+  --color-navbar-text: #F1F1F1;
+  --color-primary: #4f8cff;
+  --color-border: #333333;
+  --color-secondary-dark: #E0A800; 
+  --panel-bg:       var(--color-bg-alt);
+  --panel-text:     var(--color-text);
+  --glass-bg:       var(--color-bg-alt);
+  --glass-border:   var(--border-color);
+}
+
+footer.bg-light {
+  background-color: var(--color-bg-alt) !important;
+  color: var(--color-text) !important;
+  border-top: 1px solid var(--color-border) !important;
+}
+footer.bg-light .text-muted,
+footer.bg-light small {
+  color: var(--color-text-light) !important;
+}
+

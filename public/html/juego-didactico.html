@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego de Memoria: Leucemias</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/info-leucemias1.css">
+  <link rel="stylesheet" href="../css/root.css"> 
+  <link rel="stylesheet" href="../css/landing.css">
+  <link rel="stylesheet" href="../css/cookies.css">
+  <link rel="stylesheet" href="../css/profile-dropdown.css">
+  <link rel="stylesheet" href="../css/loader.css">
+  <link rel="stylesheet" href="../css/memoria.css">
+</head>
+
+<body>
+  <!-- MODAL GANADOR -->
+  <div id="modal-ganador" class="modal-ganador d-none">
+    <div class="modal-contenido">
+      <div class="modal-header-icon">🎉</div>
+      <h2 class="modal-title">¡Felicitaciones!</h2>
+      <p class="modal-subtitle">Has completado el juego exitosamente</p>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-icon"></div>
+          <p id="tiempo-final" class="stat-value"></p>
+        </div>
+      </div>
+      <button id="btnCerrarModalGanador" class="btn btn-primary btn-modal">Continuar</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="navbar-initial bg-light border-bottom">
+    <div class="container d-flex justify-content-between align-items-center py-2">
+      <a href="/" class="navbar-brand fw-bold text-primary">.</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER  -->
+  <main class="main-container">
+    <div class="game-container">
+      <!-- TÍTULO PRINCIPAL -->
+      <div class="title-section">
+        <div class="title-icon">🔬</div>
+        <h1 class="main-title">Juego de Memoria</h1>
+        <p class="subtitle">Identifica las Leucemias</p>
+      </div>
+
+      <!-- CONTROLES  -->
+      <div class="controls-enhanced">
+        <div class="controls-grid">
+          <div class="control-group">
+            <label class="control-label">
+              <span class="label-icon">⚙️</span>
+              Dificultad:
+            </label>
+            <select id="nivel" class="form-select-enhanced">
+              <option value="facil" selected>🟢 Fácil (3x4)</option>
+              <option value="medio">🟡 Medio (4x4)</option>
+              <option value="dificil">🔴 Difícil (4x5)</option>
+            </select>
+          </div>
+          
+          <div class="buttons-group">
+            <button id="btnIniciar" class="btn-enhanced btn-primary-enhanced">
+              <span class="btn-icon">🚀</span>
+              Iniciar Juego
+            </button>
+            <button id="btnReiniciar" class="btn-enhanced btn-secondary-enhanced">
+              <span class="btn-icon">🔄</span>
+              Reiniciar
+            </button>
+          </div>
+          
+          <div class="timer-container">
+            <div class="timer-icon">⏱️</div>
+            <span id="cronometro" class="timer-display">00:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTADÍSTICAS DEL JUEGO -->
+      <div class="game-stats d-none" id="gameStats">
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-number" id="movimientos">0</div>
+          <div class="stat-label">Movimientos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-number" id="aciertos">0</div>
+          <div class="stat-label">Pares</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-number" id="precision">100%</div>
+          <div class="stat-label">Precisión</div>
+        </div>
+      </div>
+
+      <!-- TABLERO  -->
+      <div class="tablero-container">
+        <div id="tablero" class="tablero-memoria-enhanced"></div>
+      </div>
+
+      <!-- INFORMACIÓN DE LEUCEMIA  -->
+      <div id="mensaje-leucemia" class="info-leucemia-enhanced d-none">
+        <div class="info-icon">💡</div>
+        <div class="info-content"></div>
+      </div>
+    </div>
+  </main>
+  <a href="#" class="btn-volver-flotante btn-volver">Volver al Panel</a>
+  <!-- FOOTER -->
+  <footer class="bg-light text-center text-muted py-3 border-top">
+    <small>&copy; 2025 - Proyecto académico | Derechos reservados</small>
+  </footer>
+  
+  <!-- SCRIPTS -->
+  <script src="../js/memoria.js"></script>
+  <script src="../js/navbarScroll.js"></script>
+  <script src="/js/loader.js"></script>
+  <script src="../js/volver-panel-correspondiente.js"></script>
+  <script src="../js/theme.js"></script>
+  <script>
+    //  interactividad del acordeón
+    document.querySelectorAll(".accordion-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const content = button.nextElementSibling;
+        content.classList.toggle("show");
+      });
+    });
+
+    //  navbar scroll
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('navbar-scrolled');
+      } else {
+        header.classList.remove('navbar-scrolled');
+      }
+    });
+
+    //  efectos de entrada
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.game-container > *');
+      elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          el.style.transition = 'all 0.6s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+  </script>
+</body>
+</html>

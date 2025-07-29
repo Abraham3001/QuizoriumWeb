@@ -1,0 +1,65 @@
+.celula_1 {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  width: 7.5vw;
+  max-width: 240px;
+  animation: floatInLeft 1.5s ease-out forwards;
+  z-index: 2;
+}
+
+.celula_2 {
+  position: absolute;
+  top: 65%;
+  left: 39%;
+  width: 8vw;
+  max-width: 240px;
+  animation: floatInBottom 1.5s 0.5s ease-out forwards;
+  z-index: 2;
+}
+
+.celula_3 {
+  position: absolute;
+  top: 63%;
+  left: 74%;
+  width: 8.5vw;
+  max-width: 240px;
+  animation: floatInZoom 1.5s 1s ease-out forwards;
+  z-index: 2;
+}
+
+
+@keyframes floatInLeft {
+  0% { transform: translateX(-60px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes floatInBottom {
+  0% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes floatInZoom {
+  0% { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .celula_1 {
+    top: 8%;
+    left: 15%;
+    width: 16vw;
+  }
+
+  .celula_2 {
+    top: 68%;
+    left: 10%;
+    width: 18vw;
+  }
+
+  .celula_3 {
+    top: 60%;
+    left: 60%;
+    width: 18vw;
+  }
+}

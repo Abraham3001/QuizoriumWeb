@@ -1,0 +1,260 @@
+/* === Fondo general claro === */
+body.bg-light {
+  background: #f8f9fa !important;
+}
+
+/* === Panel General === */
+.panel-list {
+  background: #fff;
+  border-radius: 18px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.14), 0 1.5px 10px rgba(0,0,0,0.04);
+  margin: 3rem auto 2.5rem auto;
+  max-width: 1050px;
+  min-width: 300px;
+}
+
+/* === Título === */
+h2.text-center {
+  font-weight: 800;
+  color: #34395f;
+  letter-spacing: 0.03em;
+  margin-bottom: 2.5rem !important;
+}
+
+/* === Lista de tarjetas === */
+#prof-list {
+  display: grid;
+  gap: 1.7rem;
+  margin: 0;
+}
+
+/* === Tarjeta de intento === */
+.card-attempt {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(13,110,253,0.07);
+  transition: box-shadow 0.17s, transform 0.16s;
+  min-height: 115px;
+  border: none;
+  position: relative;
+}
+.card-attempt:hover {
+  transform: translateY(-2px) scale(1.012);
+  box-shadow: 0 8px 24px rgba(21,89,198,0.12);
+}
+
+/* === Icono lateral === */
+.icon-side {
+  background: linear-gradient(120deg, #0b85ff 75%, #95b5f1 120%);
+  min-width: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-bubble {
+  width: 58px;
+  height: 58px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(13,110,253,0.11);
+}
+.icon-quiz {
+  font-size: 2.15rem;
+  color: #1659ba;
+}
+
+/* === Cuerpo de la tarjeta === */
+.card-body {
+  padding: 1.2rem 2rem 1.1rem 1.5rem;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-title {
+  font-size: 1.19rem;
+  color: #1659ba;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.2em;
+}
+.card-text {
+  color: #222;
+  font-size: 1.03rem;
+  margin-bottom: 0.6rem;
+}
+
+/* === Botón "Ver respuestas" === */
+.btn-verrespuestas {
+  background: #ffec8d;
+  color: #143965;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border: none;
+  transition: background 0.15s, color 0.12s, box-shadow 0.15s;
+  box-shadow: 0 2px 7px rgba(255,214,0,0.09);
+  letter-spacing: 0.01em;
+  font-size: 1rem;
+  align-self: flex-end;
+  margin-top: auto;
+}
+.btn-verrespuestas:hover, .btn-verrespuestas:focus {
+  background: #ffe476;
+  color: #1e90ff;
+  box-shadow: 0 6px 16px rgba(255,214,0,0.15);
+  text-decoration: none;
+  outline: none;
+}
+
+/* === Botones flotantes === */
+.btn-volver-flotante, .btn-ir-arriba {
+  background: #212529;
+  color: #fff;
+}
+
+/* === Footer === */
+footer.bg-white {
+  background-color: transparent !important;
+  border-top: 1px solid #e0e0e0 !important;
+  color: #999 !important;
+}
+
+/* === Responsive: optimización contenedor === */
+@media (max-width: 1200px) {
+  .panel-list { max-width: 97vw; }
+}
+@media (max-width: 768px) {
+  .panel-list {
+    padding: 1rem 0.5rem 0.8rem 0.5rem;
+  }
+  .card-attempt {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .icon-side {
+    min-width: 100%;
+    justify-content: center;
+    padding: 14px 0 8px 0;
+  }
+  .card-body {
+    padding: 1.2rem 1rem 1rem 1rem;
+    align-items: center;
+    text-align: center;
+  }
+  .btn-verrespuestas {
+    align-self: center;
+    margin-top: 12px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/*                 MODO OSCURO SOLO CON .dark           */
+/* ---------------------------------------------------- */
+html.dark body.bg-light {
+  background: #18191c !important;
+}
+
+html.dark .panel-list {
+  background: #22232a !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28) !important;
+}
+
+html.dark h2.text-center {
+  color: #f5f7fa !important;
+}
+
+html.dark .card-attempt {
+  background: #282b33 !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.64) !important;
+  border: 1px solid #313345 !important;
+}
+
+html.dark .icon-side {
+  background: linear-gradient(120deg, #22232a 70%, #474962 120%) !important;
+}
+html.dark .icon-bubble {
+  background: #2d3142 !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.33) !important;
+}
+html.dark .card-title {
+  color: #7db5f8 !important;
+}
+html.dark .card-text {
+  color: #d4d7dd !important;
+}
+html.dark .btn-verrespuestas {
+  background: #3b3c43 !important;
+  color: #ffe49a !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.44) !important;
+}
+html.dark .btn-verrespuestas:hover,
+html.dark .btn-verrespuestas:focus {
+  background: #575862 !important;
+  color: #fff8dc !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6) !important;
+}
+html.dark .btn-volver-flotante,
+html.dark .btn-ir-arriba {
+  background: #18191c !important;
+  color: #f8f9fa !important;
+}
+html.dark footer.bg-white {
+  background-color: transparent !important;
+  border-top: 1px solid #444 !important;
+  color: #aaa !important;
+}
+
+/* Navbar/Header en modo oscuro */
+html.dark .navbar,
+html.dark header,
+html.dark .navbar.navbar-light,
+html.dark .navbar.bg-light {
+  background-color: #191a1e !important;
+  color: #f3f6fa !important;
+  border-bottom: 1px solid #22242a !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+html.dark .navbar * {
+  color: #687d98 !important;
+}
+
+/* Si tienes logo o botones en nav */
+html.dark .navbar .navbar-brand,
+html.dark .navbar .nav-link,
+html.dark .navbar .dropdown-menu,
+html.dark .navbar .dropdown-item {
+  color: #f3f6fa !important;
+  background: transparent !important;
+}
+
+/* Botón o avatar de usuario en dark */
+html.dark .navbar .dropdown-menu {
+  background: #23242a !important;
+  border-color: #23242a !important;
+}
+html.dark .navbar .dropdown-item:hover,
+html.dark .navbar .dropdown-item:focus {
+  background: #191a1e !important;
+  color: #7db5f8 !important;
+}
+body, html {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}

@@ -1,0 +1,68 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #1f2937;
+}
+.page_404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+.title_404 {
+  font-size: 8vw;
+  font-weight: 900;
+  margin: 0 0 0.0vw;
+}
+/* GIF */
+.four_zero_four_bg {
+  background-image: url('../img/dribbble_1.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  padding-top: 80%;
+  margin-bottom: 10px;
+}
+.text_box_404 h3 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.text_box_404 p {
+  color: #6b7280;
+  margin: 0 0 20px;
+  font-size: 1rem;
+}
+.link_404 {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  font-weight: 500;
+}
+.link_404:hover {
+  background: #2563eb;
+}
+@media (max-width: 500px) {
+  .title_404 {
+    font-size: 18vw;
+  }
+  .four_zero_four_bg {
+    padding-top: 80%; 
+  }
+}

@@ -1,0 +1,62 @@
+/* ==== ESTILOS PARA ACORDEÓN DE LEUCEMIAS ==== */
+
+.accordion-section {
+  margin-bottom: 2rem;
+}
+
+.accordion-item {
+  margin-bottom: 20px;
+}
+
+.accordion-toggle {
+  width: 100%;
+  padding: 1.3rem 2rem;
+  border: none;
+  outline: none;
+  background: #fafcff;
+  color: #00387b;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(30, 60, 120, 0.08), 0 1.5px 4px rgba(0,0,0,0.08);
+  margin: 0 auto 0.7rem auto;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.22s, transform 0.18s;
+  display: block;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.accordion-toggle:hover, .accordion-toggle:focus {
+  background: #e7efff;
+  box-shadow: 0 6px 28px rgba(0,56,123,0.14), 0 1.5px 4px rgba(0,0,0,0.09);
+  transform: translateY(-1.5px) scale(1.012);
+}
+.accordion-toggle.active {
+  background: linear-gradient(90deg, #00387b 65%, #206dca 100%);
+  color: #fff;
+  box-shadow: 0 8px 36px rgba(0,56,123,0.14), 0 2px 6px rgba(0,0,0,0.09);
+  letter-spacing: 1.1px;
+}
+
+@media (max-width: 700px) {
+  .accordion-toggle {
+    padding: 1rem 1.2rem;
+    font-size: 1.05rem;
+    border-radius: 10px;
+  }
+}
+
+/* ==== MODO OSCURO (usa body.dark como en tu theme.js) ==== */
+body.dark .accordion-toggle {
+  background: #18223b;
+  color: #e2e8f0;
+  box-shadow: 0 4px 18px rgba(20,20,40,0.18), 0 2px 6px rgba(0,0,0,0.12);
+}
+body.dark .accordion-toggle:hover, body.dark .accordion-toggle:focus {
+  background: #223360;
+  color: #fff;
+}
+body.dark .accordion-toggle.active {
+  background: linear-gradient(90deg, #184b88 65%, #1a81f7 100%);
+  color: #fff;
+}

@@ -1,0 +1,212 @@
+html, body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.hero {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  gap: 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 1s ease-in-out;
+}
+.hero-image img {
+  max-width: 350px;
+  width: 100%;
+}
+
+.hero-content-wrapper {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+.hero-content {
+  max-width: 620px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+.hero-content .descripcion-seccion {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+.start-btn {
+  background-color: var(--color-secondary);
+  color: #212529;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+.start-btn:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.intro-leucemias {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+.titulo-seccion-2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+.descripcion-seccion {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.features {
+  background: var(--color-bg);
+  padding: 60px 0;
+}
+.features .icon {
+  max-width: 80px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.features h5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.features p {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+.features .col-md-4:hover .icon {
+  transform: scale(1.1);
+}
+
+.cta-final {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+.cta-final h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.cta-final .btn {
+  background-color: #fff;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.cta-final .btn:hover {
+  background-color: var(--color-bg-alt);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInLeft {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    padding: 20px 15px;
+    height: auto;
+    gap: 20px;
+  }
+  .hero-image img {
+    max-width: 220px;
+  }
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content .descripcion-seccion {
+    font-size: 0.95rem;
+  }
+  .start-btn {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
+  .cta-final h2 {
+    font-size: 1.5rem;
+  }
+  .cta-final .btn {
+    font-size: 1rem;
+    padding: 8px 24px;
+  }
+  .features {
+    padding: 40px 0;
+  }
+  .features h5 {
+    font-size: 1.1rem;
+  }
+  .features p {
+    font-size: 0.95rem;
+  }
+  .features .icon {
+    max-width: 60px;
+  }
+  .hero-content-wrapper {
+    padding-left: 0;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-content {
+    padding: 0;
+  }
+}

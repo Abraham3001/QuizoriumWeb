@@ -1,0 +1,87 @@
+/* Contenedor del dropdown */
+.profile-dropdown {
+  position: relative;
+  z-index: 2000;
+}
+
+/* Botón de perfil */
+#profileButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+#profileButton span {
+  color: var(--color-text);
+}
+
+#profileButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Imagen del avatar */
+#profileButton img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Dropdown oculto por defecto */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: none; /* ESTO controla la visibilidad */
+  min-width: 180px;
+  z-index: 9999;
+}
+
+/* Cuando el contenedor tiene .show, mostrar el menú */
+.profile-dropdown.show > .dropdown-menu {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+
+/* Links del menú */
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+  color: #0d6efd;
+}
+
+/* Línea divisoria */
+.dropdown-menu hr {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}

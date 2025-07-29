@@ -1,0 +1,85 @@
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal.show {
+  display: flex;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.img-modal-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.28);
+  background: #fff;
+  transition: transform 0.1s;
+  margin: 0 auto;
+}
+
+.img-modal-close {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 2010;
+  text-shadow: 0 1px 8px #222;
+  user-select: none;
+}
+.img-modal-close:active { color: #ffd600; }
+
+.img-zoomable-container {
+  position: relative;
+  display: block; /* Cambiado de inline-block a block */
+  width: fit-content;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.img-zoomable {
+  display: block;
+  max-width: 330px;      /* Ajusta según tus necesidades */
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  box-shadow: 0 1px 6px rgba(170,170,170,0.10);
+}
+
+.img-zoomable-lupa {
+  position: absolute;
+  top: 11px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.63);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  transition: background 0.2s;
+}
+.img-zoomable-lupa svg {
+  width: 20px;
+  height: 20px;
+  opacity: 0.78;
+  display: block;
+}
+.img-zoomable-container:hover .img-zoomable-lupa {
+  background: rgba(255,255,255,0.86);
+}

@@ -1,0 +1,22 @@
+/* Overlay para envío de cuestionario */
+#submit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+#submit-overlay .spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+#submit-overlay p {
+  margin-top: .5rem;
+  font-size: 1.2rem;
+  color: #333;
+}

@@ -1,0 +1,309 @@
+main.container {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+  max-width: 1140px;
+}
+
+h2.text-center {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1559c6;
+  margin-bottom: 2.2rem;
+  letter-spacing: 0.02em;
+}
+#lista-cuestionarios .btn-slim {
+  padding: 0.3rem 1.1rem;
+  font-size: 0.99rem;
+  border-radius: 1.2em;
+  min-width: 70px;
+  min-height: 36px;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+#lista-cuestionarios .card {
+  border: 1.5px solid #e2e9f3;
+  border-radius: 16px;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.18s;
+  box-shadow: 0 2px 18px rgba(26,65,135,0.06);
+  background: #fff;
+  cursor: pointer;
+}
+
+#lista-cuestionarios .card:hover {
+  transform: translateY(-6px) scale(1.012);
+  box-shadow: 0 10px 32px rgba(26,65,135,0.15);
+  border-color: #ffd600;
+}
+
+#lista-cuestionarios .card-body {
+  padding: 1.45rem 1.6rem 1.25rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 215px;
+}
+
+#lista-cuestionarios .card-title {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #2161af;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+#lista-cuestionarios .card-text {
+  font-size: 1rem;
+  color: #3c4b5e;
+  margin-bottom: 1.1rem;
+  min-height: 2.5em;
+}
+
+#lista-cuestionarios .d-flex.justify-content-between {
+  gap: 0.65rem;
+}
+
+/* Botones de acción */
+#lista-cuestionarios .btn-outline-primary {
+  border-radius: 1em;
+  font-weight: 600;
+  color: #1559c6;
+  border: 1.5px solid #1559c6;
+  background: #fff;
+  transition: background 0.14s, color 0.12s, box-shadow 0.11s;
+  box-shadow: 0 1px 3px rgba(21, 89, 198, 0.04);
+}
+#lista-cuestionarios .btn-outline-primary:hover {
+  background: #1559c6;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(21, 89, 198, 0.09);
+}
+
+#lista-cuestionarios .btn-outline-success {
+  border-radius: 1em;
+  font-weight: 600;
+  color: #28a745;
+  border: 1.5px solid #28a745;
+  background: #fff;
+  transition: background 0.14s, color 0.12s, box-shadow 0.11s;
+  box-shadow: 0 1px 3px rgba(40, 167, 69, 0.04);
+}
+#lista-cuestionarios .btn-outline-success:hover {
+  background: #28a745;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.09);
+}
+
+#lista-cuestionarios .btn-outline-danger {
+  border-radius: 1em;
+  font-weight: 600;
+  color: #dc3545;
+  border: 1.5px solid #dc3545;
+  background: #fff;
+  transition: background 0.14s, color 0.12s, box-shadow 0.11s;
+  box-shadow: 0 1px 3px rgba(220, 53, 69, 0.04);
+}
+#lista-cuestionarios .btn-outline-danger:hover {
+  background: #dc3545;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(220, 53, 69, 0.09);
+}
+
+/* Responsive: tarjetas en una columna */
+@media (max-width: 768px) {
+  #lista-cuestionarios .card-body {
+    padding: 1.1rem;
+    min-height: 160px;
+  }
+  main.container {
+    padding-left: .3rem;
+    padding-right: .3rem;
+  }
+}
+
+/* ================== MODO OSCURO: LISTA DE CUESTIONARIOS ================== */
+
+/* Fondo general */
+html.dark body.bg-light,
+html.dark body,
+html.dark main.container {
+  background: #191a1e !important;
+  color: #e3e8ee !important;
+}
+
+/* Título */
+html.dark h2.text-center {
+  color: #7db5f8 !important;
+}
+
+/* Tarjetas de cuestionarios */
+html.dark #lista-cuestionarios .card {
+  background: #23242a !important;
+  border-color: #313345 !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.28) !important;
+}
+html.dark #lista-cuestionarios .card-title {
+  color: #7db5f8 !important;
+}
+html.dark #lista-cuestionarios .card-text {
+  color: #b6bdd7 !important;
+}
+
+/* Hover de la card */
+html.dark #lista-cuestionarios .card:hover {
+  border-color: #ffd44a !important;
+  box-shadow: 0 10px 36px rgba(190, 173, 44, 0.12) !important;
+}
+
+/* Botones outline en dark */
+html.dark #lista-cuestionarios .btn-outline-primary {
+  background: #23242a !important;
+  color: #7db5f8 !important;
+  border-color: #7db5f8 !important;
+}
+html.dark #lista-cuestionarios .btn-outline-primary:hover,
+html.dark #lista-cuestionarios .btn-outline-primary:focus {
+  background: #7db5f8 !important;
+  color: #23242a !important;
+  border-color: #7db5f8 !important;
+}
+
+html.dark #lista-cuestionarios .btn-outline-success {
+  background: #23242a !important;
+  color: #24b47e !important;
+  border-color: #24b47e !important;
+}
+html.dark #lista-cuestionarios .btn-outline-success:hover,
+html.dark #lista-cuestionarios .btn-outline-success:focus {
+  background: #24b47e !important;
+  color: #23242a !important;
+  border-color: #24b47e !important;
+}
+
+html.dark #lista-cuestionarios .btn-outline-danger {
+  background: #23242a !important;
+  color: #ff6f6f !important;
+  border-color: #ff6f6f !important;
+}
+html.dark #lista-cuestionarios .btn-outline-danger:hover,
+html.dark #lista-cuestionarios .btn-outline-danger:focus {
+  background: #ff6f6f !important;
+  color: #23242a !important;
+  border-color: #ff6f6f !important;
+}
+
+/* ================== MODAL DE CONFIRMACIÓN EN DARK ================== */
+html.dark .modal-content {
+  background: #23242a !important;
+  color: #e3e8ee !important;
+  border: 1.5px solid #313345 !important;
+}
+html.dark .modal-header.bg-danger,
+html.dark .modal-header {
+  background: #b81d23 !important;
+  color: #fff !important;
+  border-bottom: 1px solid #313345 !important;
+}
+html.dark .modal-title,
+html.dark .modal-header .btn-close {
+  color: #fff !important;
+}
+html.dark .modal-footer {
+  background: #23242a !important;
+  border-top: 1px solid #313345 !important;
+}
+
+/* Botones modal */
+html.dark .modal-footer .btn-secondary {
+  background: #313345 !important;
+  color: #b6bdd7 !important;
+  border: 1px solid #505265 !important;
+}
+html.dark .modal-footer .btn-secondary:hover {
+  background: #22242a !important;
+  color: #fff !important;
+}
+html.dark .modal-footer .btn-danger {
+  background: #ff6f6f !important;
+  color: #fff !important;
+  border: none !important;
+}
+html.dark .modal-footer .btn-danger:hover {
+  background: #e23e3e !important;
+  color: #fff !important;
+}
+
+/* ================== BOTONES FLOTANTES Y FOOTER EN DARK ================== */
+html.dark .btn-volver-flotante,
+html.dark .btn-ir-arriba {
+  background: #22242a !important;
+  color: #e3e8ee !important;
+  border: 1.2px solid #303345 !important;
+}
+html.dark .btn-volver-flotante:hover {
+  background-color: #303345 !important;
+  color: #fff !important;
+}
+
+html.dark footer.bg-light {
+  background: #191a1e !important;
+  color: #aaa !important;
+  border-top: 1px solid #23242a !important;
+}
+html.dark footer.bg-light small,
+html.dark footer.bg-light .text-muted {
+  color: #aaa !important;
+}
+
+/* ========== HEADER / NAVBAR DARK MODE ========== */
+html.dark .navbar,
+html.dark header,
+html.dark .navbar.navbar-light,
+html.dark .navbar.bg-light {
+  background-color: #191a1e !important;
+  color: #f3f6fa !important;
+  border-bottom: 1px solid #22242a !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+html.dark .navbar * {
+  color: #687d98 !important;
+}
+
+html.dark .navbar .navbar-brand,
+html.dark .navbar .nav-link,
+html.dark .navbar .dropdown-menu,
+html.dark .navbar .dropdown-item {
+  color: #f3f6fa !important;
+  background: transparent !important;
+}
+
+html.dark .navbar .dropdown-menu {
+  background: #23242a !important;
+  border-color: #23242a !important;
+}
+html.dark .navbar .dropdown-item:hover,
+html.dark .navbar .dropdown-item:focus {
+  background: #191a1e !important;
+  color: #7db5f8 !important;
+}
+
+/* ==== FOOTER PEGADO AL FONDO ==== */
+body, html {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main, main.container {
+  flex: 1 0 auto;
+}
+
+/* Footer siempre abajo */
+footer {
+  flex-shrink: 0;
+}

@@ -1,0 +1,205 @@
+/* ───────── cuestionario-preestablecido.css ───────── */
+
+/* ==== FUENTE ==== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* ===== Variables claras ===== */
+:root {
+  --primary:           #2563eb;
+  --primary-dark:      #1d4ed8;
+  --primary-light:     #3b82f6;
+  --success:           #16a34a;
+  --warning:           #f59e0b;
+  --danger:            #dc2626;
+
+  --panel-bg:          #fff;
+  --panel-text:        #22223b;
+  --panel-accent:      #e2e8f0;
+  --panel-shadow:      0 4px 40px 0 rgba(31,38,135,0.08);
+
+  --nav-bg:            #f4f5fa;
+  --nav-text:          #212529;
+  --nav-selected-bg:   #2563eb;
+  --nav-selected-text: #fff;
+
+  --modal-bg:          #fff;
+  --modal-text:        #1e293b;
+
+  --input-bg:          #fff;
+  --input-text:        #22223b;
+
+  --glass-bg:          #f8fafc;
+  --glass-border:      #e2e8f0;
+
+  --border-radius-xl:  18px;
+  --shadow-lg:         0 8px 32px 0 rgba(31,38,135,0.08);
+
+  --bg-main:           #f4f5fa;
+  --color-main:        #20232a;
+
+  --feedback-bg:       #fff;
+  --feedback-error:    #dc2626;
+  --feedback-success:  #16a34a;
+}
+
+/* ===== Global Claro ===== */
+html, body {
+  margin:           0;
+  padding:          0;
+  background:       var(--bg-main);
+  color:            var(--color-main);
+  font-family:      'Inter', sans-serif;
+}
+
+/* ===== Panel “glass” ===== */
+.panel-glass {
+  background-color: var(--panel-bg)       !important;
+  color:            var(--panel-text)     !important;
+  border:           1px solid var(--glass-border) !important;
+  box-shadow:       var(--panel-shadow)   !important;
+  border-radius:    var(--border-radius-xl) !important;
+  padding:          1rem;
+}
+
+/* ===== Botones Anterior/Siguiente ===== */
+.btn-avance {
+  background-color: var(--primary);
+  color:            #fff;
+  border:           1px solid var(--primary-dark);
+  border-radius:    var(--border-radius-xl);
+  padding:          0.5rem 1rem;
+  transition:       background-color .2s;
+}
+.btn-avance:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ===== Botón “Enviar Cuestionario” ===== */
+.btn-enviar {
+  background-color: #ffd455 !important; 
+  color:            #212529 !important;
+  border:           none;
+  border-radius:    var(--border-radius-xl);
+  padding:          0.75rem 1.5rem;
+  transition:       background-color .2s;
+}
+.btn-enviar:hover {
+  background-color: #f8cf54 !important;
+}
+
+/* ===== Navegación lateral ===== */
+.nav-wrapper {
+  background-color: var(--nav-bg) !important;
+  border-radius:    var(--border-radius-xl);
+  padding:          0.5rem;
+  margin-top: 45px;
+  z-index: 10 !important;
+}
+.navegacion-preguntas {
+  display:             grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:                 0.5rem;
+}
+.navegacion-preguntas button {
+  background-color: var(--bg-main);
+  color:            var(--nav-text);
+  border:           1px solid var(--color-main);
+  border-radius:    var(--border-radius-xl);
+  padding:          0.5rem;
+  transition:       background-color .2s;
+}
+.navegacion-preguntas button.active {
+  background-color: var(--nav-selected-bg);
+  color:            var(--nav-selected-text);
+}
+
+.seleccion-cuestionario-modal {
+  background-color: var(--modal-bg);
+  color:            var(--modal-text);
+  border-radius:    var(--border-radius-xl);
+  padding:          1rem;
+  max-width:        320px;
+  width:            100%;
+}
+
+html.dark body,
+body.dark {
+  background: var(--color-bg, #121212);
+  color:      var(--color-text, #F1F1F1);
+}
+
+html.dark .panel-glass,
+body.dark .panel-glass {
+  background-color: #2B2B2B !important;  /* un poco más claro que #1E1E1E */
+  color:            #F1F1F1     !important;
+  border-color:     #333333     !important;
+  box-shadow:       0 4px 20px rgba(0,0,0,0.5) !important;
+}
+
+html.dark .nav-wrapper,
+body.dark .nav-wrapper {
+  background-color: #1E1E1E !important;
+}
+html.dark .navegacion-preguntas button,
+body.dark .navegacion-preguntas button {
+  background-color: #2A2A2A;
+  color:            #F1F1F1;
+  border-color:     #444444;
+}
+html.dark .navegacion-preguntas button.active,
+body.dark .navegacion-preguntas button.active {
+  background-color: var(--nav-selected-bg);
+  color:            var(--nav-selected-text);
+}
+
+/* Oscurecer preguntas y resultados */
+html.dark .question,
+body.dark .question,
+html.dark #feedback,
+body.dark #feedback,
+html.dark #resultado,
+body.dark #resultado {
+  background-color: var(--panel-bg) !important;
+  color:            var(--panel-text) !important;
+  border:           1px solid var(--glass-border) !important;
+  border-radius:    var(--border-radius-xl) !important;
+  box-shadow:       var(--panel-shadow) !important;
+}
+/* Forzar texto de etiquetas */
+html.dark .question label,
+body.dark .question label {
+  color: var(--panel-text) !important;
+}
+
+/* ─── Ajustes finales ─── */
+/* Botones redondeados de nav: menos curvatura */
+html.dark .navegacion-preguntas button,
+body.dark .navegacion-preguntas button {
+  border-radius: 4px !important;
+}
+
+body, html {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}
+
+#botones-navegacion,
+#quizForm + .d-flex,    /* si usas el div con la clase d-flex como en tu HTML */
+#submitBtn {
+  position: relative;
+  z-index: 30; /* Más alto que el nav-wrapper */
+}
+
+/* Opcionalmente asegura que nav-wrapper esté detrás */
+.nav-wrapper {
+  z-index: 10;
+  position: sticky; /* Ya lo tienes, pero así lo reforzamos */
+  top: 80px;
+}

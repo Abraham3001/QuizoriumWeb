@@ -1,0 +1,308 @@
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.config-container {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--color-bg-alt);
+  min-height: 100vh;
+  position: relative;
+}
+
+.config-sidebar {
+  width: 260px;
+  position: sticky;
+  top: 80px; /* esto se adapta al height de tu navbar */
+  height: calc(100vh - 80px);
+  background-color: var(--color-bg);
+  padding: 2rem 1rem;
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.config-sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+  padding-left: 0.5rem;
+}
+
+
+.config-menu h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.config-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.config-menu li {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  color: var(--color-text);
+}
+
+.config-menu li:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.config-menu li {
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.config-menu li.active {
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+  padding-left: 28px;
+  position: relative;
+}
+
+.config-menu li.active::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 0;
+  height: 100%;
+  width: 8px;
+  background-color: var(--color-primary);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.config-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background-color: var(--color-bg);
+}
+
+.config-section {
+  display: none;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.config-section.active {
+  display: block;
+}
+
+.config-card {
+  background-color: var(--color-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  /* Sombra quitada para diseño limpio */
+}
+
+.config-card h4 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.config-card label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+  font-weight: 600;
+}
+
+.config-card input,
+.config-card select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.config-card button {
+  margin-top: 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.config-card button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.profile-avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+}
+
+#user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primary);
+  background-color: #e0e0e0;
+}
+
+.avatar-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.profile-avatar-container:hover .avatar-hover {
+  opacity: 1;
+}
+
+input[type="file"]#foto {
+  display: none;
+}
+
+.bienvenida-texto {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.dashboard-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 160px;
+}
+
+.dashboard-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.dashboard-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.dashboard-action {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.dashboard-action:hover {
+  text-decoration: underline;
+  color: var(--color-primary-dark);
+}
+
+.dashboard-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.dashboard-links li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.dashboard-links li span {
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
+}
+.modal-verificacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#modal-codigo .codigo-inputs input.error {
+  border-color: red;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.codigo-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.codigo-inputs input {
+  width: 2.5rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
